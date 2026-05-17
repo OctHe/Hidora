@@ -85,21 +85,21 @@ match-style=underline,bold,nocolor
 # Desktop icon for commands
 [[customizations.directories]]
 path = "/etc/skel/.local"
-mode = "0655"
+mode = "0755"
 user = "root"
 group = "root"
 ensure_parents = false
 
 [[customizations.directories]]
 path = "/etc/skel/.local/share"
-mode = "0655"
+mode = "0755"
 user = "root"
 group = "root"
 ensure_parents = false
 
 [[customizations.directories]]
 path = "/etc/skel/.local/share/applications"
-mode = "0655"
+mode = "0755"
 user = "root"
 group = "root"
 ensure_parents = false
