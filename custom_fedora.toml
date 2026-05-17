@@ -1,0 +1,118 @@
+name = "OFedora"
+description = "An opinionated Fedora distribution."
+
+# GNOME desktop
+[[packages]]
+name = "@workstation-product-environment"
+version = "*"
+
+# GNOME mail clinet
+[[packages]]
+name = "evolution"
+version = "*"
+
+[[packages]]
+name = "fish"
+version = "*"
+
+# [[packages]]
+# name = "vim-x11"
+# version = "*"
+#
+# # User-level Vim configuration
+# [[customizations.directories]]
+# path = "/etc/skel/.vim"
+# mode = "0655"
+# user = "root"
+# group = "root"
+# ensure_parents = false
+#
+# [[customizations.files]]
+# path = "/etc/skel/.vim/vimrc"
+# mode = "0644"
+# user = "root"
+# group = "root"
+# data = """
+# """
+
+[[packages]]
+name = "screenfetch"
+version = "*"
+
+[[packages]]
+name = "tmux"
+version = "*"
+
+[[packages]]
+name = "ctags"
+version = "*"
+
+[[packages]]
+name = "cscope"
+version = "*"
+
+[[packages]]
+name = "python3-pip"
+version = "*"
+
+[[packages]]
+name = "python3-autopep8"
+version = "*"
+
+[[customizations.user]]
+name = "Fedora"
+password = "31415926"
+shell = "/bin/fish"
+groups = ["wheel"]
+
+# Highlight info
+[[packages]]
+name = "info"
+version = "*"
+
+[[customizations.files]]
+path = "/etc/skel/.infokey"
+mode = "0644"
+user = "root"
+group = "root"
+data = """
+#var
+link-style=yellow
+active-link-style=yellow,bold
+match-style=underline,bold,nocolor
+"""
+
+# Desktop icon for commands
+[[customizations.directories]]
+path = "/etc/skel/.local"
+mode = "0655"
+user = "root"
+group = "root"
+ensure_parents = false
+
+[[customizations.directories]]
+path = "/etc/skel/.local/share"
+mode = "0655"
+user = "root"
+group = "root"
+ensure_parents = false
+
+[[customizations.directories]]
+path = "/etc/skel/.local/share/applications"
+mode = "0655"
+user = "root"
+group = "root"
+ensure_parents = false
+
+[[customizations.files]]
+path = "/etc/skel/.local/share/applications/top.desktop"
+mode = "0644"
+user = "root"
+group = "root"
+data = """
+[Desktop Entry]
+Name=top
+Type=Application
+Exec=top
+Terminal=true
+"""
