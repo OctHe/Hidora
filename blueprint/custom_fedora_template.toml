@@ -15,25 +15,41 @@ version = "*"
 name = "fish"
 version = "*"
 
-# [[packages]]
-# name = "vim-x11"
-# version = "*"
-#
-# # User-level Vim configuration
-# [[customizations.directories]]
-# path = "/etc/skel/.vim"
-# mode = "0655"
-# user = "root"
-# group = "root"
-# ensure_parents = false
-#
-# [[customizations.files]]
-# path = "/etc/skel/.vim/vimrc"
-# mode = "0644"
-# user = "root"
-# group = "root"
-# data = """
-# """
+[[customizations.directories]]
+path = "/etc/skel/.config/fish"
+mode = "0755"
+user = "root"
+group = "root"
+ensure_parents = false
+
+[[customizations.files]]
+path = "/etc/skel/.config/fish/config.fish"
+mode = "0644"
+user = "root"
+group = "root"
+data = '''
+{{INSERT_FISH_CONFIG}}
+'''
+
+[[packages]]
+name = "vim-enhanced"
+version = "*"
+
+[[customizations.directories]]
+path = "/etc/skel/.vim"
+mode = "0755"
+user = "root"
+group = "root"
+ensure_parents = false
+
+[[customizations.files]]
+path = "/etc/skel/.vim/vimrc"
+mode = "0644"
+user = "root"
+group = "root"
+data = '''
+{{INSERT_VIM_CONFIG}}
+'''
 
 [[packages]]
 name = "screenfetch"
@@ -42,6 +58,22 @@ version = "*"
 [[packages]]
 name = "tmux"
 version = "*"
+
+[[customizations.directories]]
+path = "/etc/skel/.config/tmux"
+mode = "0755"
+user = "root"
+group = "root"
+ensure_parents = false
+
+[[customizations.files]]
+path = "/etc/skel/.config/tmux/tmux.conf"
+mode = "0644"
+user = "root"
+group = "root"
+data = '''
+{{INSERT_TMUX_CONFIG}}
+'''
 
 [[packages]]
 name = "ctags"
@@ -58,6 +90,10 @@ version = "*"
 [[packages]]
 name = "python3-autopep8"
 version = "*"
+
+[[customizations.user]]
+name = "root"
+password = "31415926"
 
 [[customizations.user]]
 name = "Fedora"
