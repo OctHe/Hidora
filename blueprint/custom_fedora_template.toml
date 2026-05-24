@@ -1,19 +1,16 @@
-name = "OFedora"
+name = "Custom Fedora"
 description = "An opinionated Fedora distribution."
 
 # GNOME desktop
 [[packages]]
 name = "@workstation-product-environment"
-version = "*"
 
 # GNOME mail clinet
 [[packages]]
 name = "evolution"
-version = "*"
 
 [[packages]]
 name = "fish"
-version = "*"
 
 [[customizations.directories]]
 path = "/etc/skel/.config/fish"
@@ -33,7 +30,6 @@ data = '''
 
 [[packages]]
 name = "vim-enhanced"
-version = "*"
 
 [[customizations.directories]]
 path = "/etc/skel/.vim"
@@ -53,11 +49,9 @@ data = '''
 
 [[packages]]
 name = "screenfetch"
-version = "*"
 
 [[packages]]
 name = "tmux"
-version = "*"
 
 [[customizations.directories]]
 path = "/etc/skel/.config/tmux"
@@ -75,36 +69,49 @@ data = '''
 {{INSERT_TMUX_CONFIG}}
 '''
 
+# Development suit
+[[packages]]
+name = "cmake"
+
+[[packages]]
+name = "make"
+
 [[packages]]
 name = "ctags"
-version = "*"
 
 [[packages]]
 name = "cscope"
-version = "*"
 
 [[packages]]
 name = "python3-pip"
-version = "*"
 
 [[packages]]
-name = "python3-autopep8"
-version = "*"
+name = "pylint"
 
-[[customizations.user]]
-name = "root"
-password = "31415926"
+[[customizations.files]]
+path = "/etc/skel/.pylintrc"
+mode = "0644"
+user = "root"
+group = "root"
+data = '''
+[MAIN]
+init-hook="
+    import sys, os
 
-[[customizations.user]]
-name = "Fedora"
-password = "31415926"
-shell = "/bin/fish"
-groups = ["wheel"]
+    if 'VIRTUAL_ENV' not in os.environ: sys.exit(0)
+
+    ve_dir = os.environ['VIRTUAL_ENV']
+    ve_dir in sys.path or sys.path.insert(0, ve_dir)"
+
+extension-pkg-allow-list=PyQt5,numpy
+'''
+
+[[packages]]
+name = "python3-isort"
 
 # Highlight info
 [[packages]]
 name = "info"
-version = "*"
 
 [[customizations.files]]
 path = "/etc/skel/.infokey"
@@ -117,6 +124,17 @@ link-style=yellow
 active-link-style=yellow,bold
 match-style=underline,bold,nocolor
 """
+
+# User. Please change the default password
+[[customizations.user]]
+name = "root"
+password = "31415926"
+
+[[customizations.user]]
+name = "Fedora"
+password = "31415926"
+shell = "/bin/fish"
+groups = ["wheel"]
 
 # Desktop icon for commands
 [[customizations.directories]]

@@ -28,4 +28,5 @@ if status is-interactive
             fisher install oh-my-fish/plugin-bang-bang
         end
     end
+
 end

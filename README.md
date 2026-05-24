@@ -10,6 +10,14 @@ List all types
 
     image-builder list --filter distro:fedora-44
 
+## Preinstall
+
+The blueprint file is generated from the template and predefined configuration files in 'config' directory for lots of packages.
+
+Generate the blueprint file by running
+
+    python3 preinstall.py
+
 ## Customization
 
 The image-builder will generate a minimal-installer

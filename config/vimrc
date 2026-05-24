@@ -118,8 +118,10 @@ augroup END
 nnoremap <silent> <Leader>e :NERDTreeToggle<CR>
 
 
+let g:yankring_history_dir = '$HOME/.cache/'
+
 " ---------------- Tag and Linter ----------------
-let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_python_enabled_makers = ['pylint']
 
 try
   " When writing a buffer, and on normal mode changes (after 750ms).
@@ -128,7 +130,7 @@ catch
   echo "An error occurred for neomake"
 endtry
 
-let g:neoformat_enabled_python = ['autopep8', 'isort']
+let g:neoformat_enabled_python = ['isort']
 
 " ---------------- Completor ----------------
 let g:delimitMate_balance_matchpairs = 1
@@ -143,6 +145,7 @@ let g:airline#extensions#tabline#enabled = 1        " Enhanced tabline
 let g:airline#extensions#tabline#buffer_nr_show = 1 " Show buffer number
 
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
 
 " ================ Command ================
 " Define user commands for updating/cleaning the plugins.
