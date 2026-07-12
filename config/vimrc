@@ -48,10 +48,11 @@ function! PackInit() abort
   call minpac#add('preservim/vimux')
 
   " vim-tmux-navigator
-  " Use local version if it exists
+  " Cp the plugin from the local version if it exists. The if condition may be
+  " removed in the future
   if isdirectory(glob('~/.local/share/tmux/plugin/vim-tmux-navigator'))
     " Use the same file for both vim and tmux
-    call minpac#add('~/.local/share/tmux/plugin/vim-tmux-navigator')
+    call minpac#add(glob('~/.local/share/tmux/plugin/vim-tmux-navigator'))
   else
     call minpac#add('christoomey/vim-tmux-navigator')
   endif
