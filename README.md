@@ -1,4 +1,4 @@
-# Custom Fedora
+# Hidora
 
 This is a custom fedora distribution with the help of image builder.
 
@@ -22,6 +22,5 @@ Generate the blueprint file by running
 
 The image-builder will generate a minimal-installer
 
-    sudo image-builder build image-installer --distro fedora-43 --blueprint custom_fedora.toml
-
+    sudo image-builder build image-installer --distro fedora-43 --blueprint hidora.toml
 

@@ -1,5 +1,5 @@
-name = "Custom Fedora"
-description = "An opinionated Fedora distribution."
+name = "Hedora"
+description = "A personal Fedora distribution based on image-builder."
 
 # GNOME desktop
 [[packages]]

@@ -1,7 +1,7 @@
 
-template = "blueprint/custom_fedora_template.toml"
+template = "blueprint/hidora_template.toml"
 config_dir = "./config/"
-output_file = "custom_fedora.toml"
+output_file = "hidora.toml"
 
 with open(config_dir + "tmux.conf", encoding="utf-8") as f:
     tmux_config = f.read()
